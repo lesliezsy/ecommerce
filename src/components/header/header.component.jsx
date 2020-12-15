@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // a special syntax in React for importing SVG.
 import { ReactComponent as Logo } from '../../assets/crown.svg';
@@ -32,4 +33,10 @@ const Header = ({ currentUser }) => (
     </div>
 )
 
-export default Header;
+// function to access to stat: root reducer
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+    // user comes from root-reducer; currentUser comes from user.reducer
+})
+
+export default connect(mapStateToProps)(Header);
