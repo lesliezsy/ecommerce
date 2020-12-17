@@ -10,7 +10,7 @@ import './cart-icon.styles.scss';
 
 // 加 className 是為了應用 css
 
-// 要輸出的組件要長怎樣 在這裡設 定好
+// 要輸出的組件要長怎樣 在這裡設定好
 const CartIcon = ({ toggleCartHidden }) => (
     <div className='cart-icon'>
         <ShoppingIcon className='shopping-icon' onClick={ toggleCartHidden } />
@@ -18,10 +18,11 @@ const CartIcon = ({ toggleCartHidden }) => (
     </div>
 )
 
-// 從action傳來ㄉprops
+
+// 從action傳來ㄉdispatch
 const mapDispatchToProps = dispatch => ({
     // function triggers dispatch of toggleCartHidden
-    toggleCartHidden: () => dispatch(toggleCartHidden())
+     toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
 export default connect(null, mapDispatchToProps)(CartIcon);

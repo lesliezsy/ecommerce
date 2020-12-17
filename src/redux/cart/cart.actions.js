@@ -7,3 +7,9 @@ export const toggleCartHidden = () => ({
 // export default const CartActionTypes = {
 //     TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN'
 // }
+
+// 新增一個action "addItem"
+export const addItem = item => ({
+    type: CartActionTypes.ADD_ITEM,
+    payload: item // payload is the item that you selected.
+})
