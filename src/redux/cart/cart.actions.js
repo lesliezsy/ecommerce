@@ -9,6 +9,7 @@ export const toggleCartHidden = () => ({
 // }
 
 // 新增一個action "addItem"
+// return the object which represnets the new addItem type as well as payload which then finally dispatches.
 export const addItem = item => ({
     type: CartActionTypes.ADD_ITEM,
     payload: item // payload is the item that you selected.

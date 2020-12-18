@@ -24,7 +24,8 @@ const CollectionItem = ({ id, name, price, imageUrl }) => (
         <CustomButton inverted> Add to cart </CustomButton>
     </div>
 );
-  
+ 
+// update actual item
 // 派用addItem的value:item 到 component
 // addItem() 是一個 action creater
 const mapDispatchToProps = dispatch => ({

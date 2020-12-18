@@ -1,4 +1,5 @@
 import CartActionTypes from './cart.types';
+import { addItemToCart } from './cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
@@ -16,7 +17,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             // import 現有的商品(existing arr)，還有action新fired的商品(newly added to arr)
-            cartItems: [...state.cartItems, action.payload]
+            cartItems: addItemToCart(state.cartItems, action.payload)
         }
 
     // 如果上方沒有東西改變的話，預設會回傳這個 default 
