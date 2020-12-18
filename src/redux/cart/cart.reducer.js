@@ -17,6 +17,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             // import 現有的商品(existing arr)，還有action新fired的商品(newly added to arr)
+            // 帶入action.js來的item
             cartItems: addItemToCart(state.cartItems, action.payload)
         }
 
