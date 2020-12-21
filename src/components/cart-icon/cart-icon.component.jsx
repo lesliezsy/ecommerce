@@ -11,18 +11,25 @@ import './cart-icon.styles.scss';
 // 加 className 是為了應用 css
 
 // 要輸出的組件要長怎樣 在這裡設定好
-const CartIcon = ({ toggleCartHidden }) => (
+const CartIcon = ({ toggleCartHidden, itemCount }) => (
     <div className='cart-icon'>
         <ShoppingIcon className='shopping-icon' onClick={ toggleCartHidden } />
-        <span className='item-count'>0</span>
+        <span className='item-count'>{itemCount}</span>
     </div>
 )
 
 
-// 從action傳來ㄉdispatch
+// 從action傳來ㄉ dispatch
 const mapDispatchToProps = dispatch => ({
     // function triggers dispatch of toggleCartHidden
      toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
-export default connect(null, mapDispatchToProps)(CartIcon);
+// 新增cart item quantity
+const mapStateToProps = ({ cart: { cartItems }}) => ({
+    itemCount: cartItems.reduce(
+        (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0
+        )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
