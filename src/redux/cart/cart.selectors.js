@@ -13,6 +13,11 @@ export const selectCartItems = createSelector(
     cart => cart.cartItems
 );
 
+export const selectCartHidden = createSelector(
+    [selectCart],
+    cart => cart.hidden
+)
+
 // 計算購物車商品數量
 export const selectCartItemsCount = createSelector(
     [selectCartItems],
