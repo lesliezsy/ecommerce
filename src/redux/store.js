@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-// allow broswer to catch store
+// allow browser to catch store
 import { persistStore } from 'redux-persist';
 import logger from 'redux-logger';
 
@@ -10,5 +10,7 @@ const middlewares = [logger];
 
 // applyMiddleware put return value
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
+
+export const persistor = persistStore(store);
 
 export default store;

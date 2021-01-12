@@ -31,4 +31,5 @@ const mapStateToProps = dispatch => ({
     removeItem: item => dispatch(removeItem(item)),
 });
 
+// connect傳回來的是一個function, 而CheckoutItem被當作是該function的參數
 export default connect(null, mapStateToProps)(CheckoutItem);
