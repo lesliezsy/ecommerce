@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
+// allow broswer to catch store
+import { persistStore } from 'redux-persist';
 import logger from 'redux-logger';
 
 import rootReducer from './root-reducer';
