@@ -14,6 +14,7 @@ const persistConfig = {
   whitelist: ['cart'] // array containing the string name that any reducer we want to store
 };
 
+// merge reducers into one
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,

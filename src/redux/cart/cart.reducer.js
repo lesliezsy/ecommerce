@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   cartItems: []
 };
 
+// 拆分reducer
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     // case is "listen to action"
