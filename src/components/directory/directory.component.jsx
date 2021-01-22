@@ -10,15 +10,16 @@ import './directory.styles.scss';
 
 const Directory = ({ sections }) => (
   <div className='directory-menu'>
-    {sections.map(({ id, ...otherSectionProps }) => (
+    {sections.map(({id, ...otherSectionProps}) => (
       <MenuItem key={id} {...otherSectionProps} />
       // 等於 key={id} title={title} imageUrl={imageUrl} size={size} linkUrl={linkUrl}
     ))}
+    { console.log(sections) }
   </div>
 );
 
 const mapStateToProps = createStructuredSelector({
-  sections: selectDirectorySections
+  sections: selectDirectorySections,
 });
 
 // class Directory extends React.Component {

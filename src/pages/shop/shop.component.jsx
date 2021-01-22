@@ -11,6 +11,7 @@ import { Route } from 'react-router-dom';
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
 import CollectionPage from '../collection/collection.component';
 
+// 會傳來什麼資料？
 const ShopPage = ({ match }) => (
     <div className='shop-page'>
       <Route exact path={`${match.path}`} component={CollectionsOverview} />
