@@ -1,3 +1,4 @@
+// 定義事件指令 
 const CartActionTypes = {
   // 用大寫是因為本身不會改變
     TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
@@ -6,4 +7,4 @@ const CartActionTypes = {
     CLEAR_ITEM_FROM_CART: 'CLEAR_ITEM_FROM_CART'
   };
   
-  export default CartActionTypes;
+export default CartActionTypes;

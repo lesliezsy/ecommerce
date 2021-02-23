@@ -10,12 +10,11 @@ import App from './App';
 import { store, persistor } from './redux/store';
 
 
-
-// wrap around the <APP>, gives <APP> all the functionality that react-router-dom, the library, provides.
 ReactDOM.render(
   // <Provider> is the parent of all components, so can access to all store'info
   <Provider store={store}>
-    <BrowserRouter>
+    {/* <BrowserRouter> wrap around the <App>, gives <App> all the functionality that react-router-dom, the library, provides. */}
+    <BrowserRouter> 
     <PersistGate persistor={persistor}>
       <App />
       </PersistGate>

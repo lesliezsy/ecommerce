@@ -6,7 +6,8 @@ const INITIAL_STATE = {
   cartItems: []
 };
 
-// 拆分reducer
+// 配對action.type的值
+// 建立一個Reducer, 拆分reducer, 各自代表改變state的屬性
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     // case is "listen to action"
