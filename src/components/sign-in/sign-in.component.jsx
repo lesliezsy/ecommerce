@@ -33,9 +33,10 @@ class SignIn extends React.Component {
     }
 
     handleChange = event => {
+        console.log(event.target);
         const { value, name } = event.target; // if user is typing email, the name will be email and the value will be what he is typing in.
 
-        this.setState({ [name]: value });
+        this.setState({ [name]: value }); 
     }
 
     render() {

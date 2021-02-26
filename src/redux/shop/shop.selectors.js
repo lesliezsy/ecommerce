@@ -10,13 +10,18 @@ import memoize from 'lodash.memoize';
 //     mens: 5
 // }
 
+// state 會有所有reducer的資料 { user: {…}, cart: {…}, directory: {…}, shop: {…}, _persist: {…}}
+// 這邊只要shop的
 const selectShop = state => state.shop;
 
+// 利用selectShop的資料，創建一個商品分類（collections）的selector
+// shop: {collections: {…}}
 export const selectCollections = createSelector(
     [selectShop],
     shop => shop.collections
 );
 
+// collections: {hats: {…}, sneakers: {…}, jackets: {…}, womens: {…}, mens: {…}}
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
     collections => Object.keys(collections).map(key => collections[key])
