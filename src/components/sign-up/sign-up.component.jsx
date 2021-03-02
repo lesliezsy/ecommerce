@@ -22,7 +22,7 @@ class SignUp extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    // 從前面傳來的資料存在state，被解構使用
+    // 從註冊頁傳來的資料存在state，被解構使用
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {

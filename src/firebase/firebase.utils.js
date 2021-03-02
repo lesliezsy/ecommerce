@@ -49,6 +49,7 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // Start a sign in process for an unauthenticated user.
+// Set up the google authentication utility
 const provider = new firebase.auth.GoogleAuthProvider();
 // 每次認證或登入的時候，就trigger google pop up
 provider.setCustomParameters({ prompt: 'select_account' });

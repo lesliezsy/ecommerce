@@ -28,13 +28,15 @@ class App extends React.Component {
   //   }
   // }
 
-  // a method, 用來清空登入的資訊
+  // a method, 用來清空登入的資訊，結束與subscribtion之連結，will call componentWillUnmount
   unsubscribeFromAuth = null
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
     
+    // onAuthStateChanged -- open subscribtion: 會一直是connection狀態，自動檢查state是否更新，只要component is mounted on the DOM.
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      // 如果有這個user，user通過認證
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
