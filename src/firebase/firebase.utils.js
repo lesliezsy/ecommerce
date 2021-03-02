@@ -20,6 +20,7 @@ const config = {
 
 firebase.initializeApp(config);
 
+// to store user data
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -27,6 +28,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   const snapShot = await userRef.get();
 
+  // to determine if we store this user object, if not, store it
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
